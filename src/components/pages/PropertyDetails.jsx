@@ -201,9 +201,9 @@ const [loading, setLoading] = useState(true);
                     Virtual Tour
                   </Button>
                 </motion.div>
-              )}
+)}
               {/* Contact Form */}
-<ContactForm propertyTitle={property.title} />
+              <ContactForm propertyTitle={property?.title || 'Property'} />
             </div>
           </div>
         </div>
@@ -212,8 +212,8 @@ const [loading, setLoading] = useState(true);
         <VirtualTourViewer
           isOpen={showVirtualTour}
           onClose={() => setShowVirtualTour(false)}
-          tourUrl={property.virtualTourUrl}
-          propertyTitle={property.title}
+          tourUrl={property?.virtualTourUrl || ''}
+          propertyTitle={property?.title || 'Property'}
         />
       </div>
     </div>

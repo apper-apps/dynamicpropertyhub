@@ -14,16 +14,14 @@ const PropertyDetails = ({ property, className = '' }) => {
       day: 'numeric'
     });
   };
-
-  const specifications = [
-    { label: 'Property Type', value: property.propertyType },
-    { label: 'Year Built', value: property.yearBuilt },
-    { label: 'Listed', value: formatDate(property.listingDate) },
-    { label: 'Square Feet', value: property.squareFeet?.toLocaleString() },
-    { label: 'Bedrooms', value: property.bedrooms },
-    { label: 'Bathrooms', value: property.bathrooms }
+const specifications = [
+    { label: 'Property Type', value: property?.propertyType || 'N/A' },
+    { label: 'Year Built', value: property?.yearBuilt || 'N/A' },
+    { label: 'Listed', value: property?.listingDate ? formatDate(property.listingDate) : 'N/A' },
+    { label: 'Square Feet', value: property?.squareFeet?.toLocaleString() || 'N/A' },
+    { label: 'Bedrooms', value: property?.bedrooms || 'N/A' },
+    { label: 'Bathrooms', value: property?.bathrooms || 'N/A' }
   ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,26 +31,25 @@ const PropertyDetails = ({ property, className = '' }) => {
     >
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-        <div className="flex-1">
+<div className="flex-1">
           <Text variant="heading" weight="bold" size="3xl" className="mb-2">
-            {property.title}
+            {property?.title || 'Property Title'}
           </Text>
           <div className="flex items-center text-gray-600 mb-4">
             <ApperIcon name="MapPin" className="w-5 h-5 mr-2" />
-            <Text size="lg">{property.address}</Text>
+            <Text size="lg">{property?.address || 'Address not available'}</Text>
           </div>
           <PropertyStats
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathrooms}
-            squareFeet={property.squareFeet}
+            bedrooms={property?.bedrooms || 0}
+            bathrooms={property?.bathrooms || 0}
+            squareFeet={property?.squareFeet || 0}
             className="mb-4"
           />
         </div>
-        
-        <div className="flex flex-col items-end">
-          <PriceDisplay price={property.price} size="3xl" className="mb-2" />
+<div className="flex flex-col items-end">
+          <PriceDisplay price={property?.price || 0} size="3xl" className="mb-2" />
           <Badge variant="primary" size="md">
-            {property.propertyType}
+            {property?.propertyType || 'Property'}
           </Badge>
         </div>
       </div>
@@ -61,9 +58,9 @@ const PropertyDetails = ({ property, className = '' }) => {
       <div>
         <Text variant="heading" weight="semibold" size="xl" className="mb-4">
           About This Property
-        </Text>
+</Text>
         <Text color="gray-700" className="text-lg leading-relaxed">
-          {property.description}
+          {property?.description || 'No description available.'}
         </Text>
       </div>
 
@@ -83,17 +80,17 @@ const PropertyDetails = ({ property, className = '' }) => {
             >
               <Text size="sm" color="gray-600" className="mb-1">
                 {spec.label}
-              </Text>
+</Text>
               <Text weight="semibold" size="lg">
-                {spec.value}
+                {spec.value || 'N/A'}
               </Text>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Amenities */}
-      {property.amenities && property.amenities.length > 0 && (
+{/* Amenities */}
+      {property?.amenities && Array.isArray(property.amenities) && property.amenities.length > 0 && (
         <div>
           <Text variant="heading" weight="semibold" size="xl" className="mb-4">
             Amenities & Features
@@ -108,15 +105,15 @@ const PropertyDetails = ({ property, className = '' }) => {
                 className="flex items-center p-3 bg-white rounded-lg border border-gray-200 hover:border-primary/30 transition-colors duration-200"
               >
                 <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                <Text weight="medium">{amenity}</Text>
+                <Text weight="medium">{amenity || 'Feature'}</Text>
               </motion.div>
             ))}
           </div>
         </div>
       )}
 
-      {/* Location Info */}
-      {property.coordinates && (
+{/* Location Info */}
+      {property?.coordinates && (
         <div>
           <Text variant="heading" weight="semibold" size="xl" className="mb-4">
             Location
@@ -124,16 +121,16 @@ const PropertyDetails = ({ property, className = '' }) => {
           <div className="bg-gray-50 p-6 rounded-lg">
             <div className="flex items-center mb-3">
               <ApperIcon name="MapPin" className="w-5 h-5 text-primary mr-2" />
-              <Text weight="medium">{property.address}</Text>
+              <Text weight="medium">{property?.address || 'Address not available'}</Text>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <Text color="gray-600" className="mb-1">Latitude</Text>
-                <Text weight="medium">{property.coordinates.lat}</Text>
+                <Text weight="medium">{property?.coordinates?.lat || 'N/A'}</Text>
               </div>
               <div>
                 <Text color="gray-600" className="mb-1">Longitude</Text>
-                <Text weight="medium">{property.coordinates.lng}</Text>
+                <Text weight="medium">{property?.coordinates?.lng || 'N/A'}</Text>
               </div>
             </div>
           </div>
