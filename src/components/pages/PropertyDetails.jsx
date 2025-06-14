@@ -9,17 +9,18 @@ import Loading from '@/components/atoms/Loading';
 import ImageGallery from '@/components/organisms/ImageGallery';
 import PropertyDetails from '@/components/organisms/PropertyDetails';
 import ContactForm from '@/components/organisms/ContactForm';
+import VirtualTourViewer from '@/components/organisms/VirtualTourViewer';
 import { propertyService, savedPropertyService } from '@/services';
 
 const PropertyDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
+const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
   const [savingToggle, setSavingToggle] = useState(false);
-
+  const [showVirtualTour, setShowVirtualTour] = useState(false);
   useEffect(() => {
     if (id) {
       loadProperty();
@@ -175,7 +176,7 @@ const PropertyDetailsPage = () => {
                       className={`w-4 h-4 mr-2 ${isSaved ? 'fill-current' : ''}`} 
                     />
                   )}
-                  {isSaved ? 'Saved' : 'Save'}
+{isSaved ? 'Saved' : 'Save'}
                 </Button>
                 
                 <Button variant="outline" className="flex-1">
@@ -184,11 +185,36 @@ const PropertyDetailsPage = () => {
                 </Button>
               </motion.div>
 
+              {/* Virtual Tour Button */}
+              {property.virtualTourUrl && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Button
+                    variant="accent"
+                    onClick={() => setShowVirtualTour(true)}
+                    className="w-full"
+                  >
+                    <ApperIcon name="Eye" className="w-4 h-4 mr-2" />
+                    Virtual Tour
+                  </Button>
+                </motion.div>
+              )}
               {/* Contact Form */}
-              <ContactForm propertyTitle={property.title} />
+<ContactForm propertyTitle={property.title} />
             </div>
           </div>
         </div>
+
+        {/* Virtual Tour Modal */}
+        <VirtualTourViewer
+          isOpen={showVirtualTour}
+          onClose={() => setShowVirtualTour(false)}
+          tourUrl={property.virtualTourUrl}
+          propertyTitle={property.title}
+        />
       </div>
     </div>
   );

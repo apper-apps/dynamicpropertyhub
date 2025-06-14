@@ -1,107 +1,97 @@
 [
   {
-    "id": "1",
-    "title": "Modern Downtown Loft",
-    "price": 850000,
-    "address": "123 Main Street, Downtown, CA 90210",
+    "id": 1,
+    "title": "Modern Downtown Condo",
+    "price": 750000,
+    "address": "123 Main Street, Downtown",
     "bedrooms": 2,
     "bathrooms": 2,
-    "squareFeet": 1200,
-    "propertyType": "Apartment",
-    "images": [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+    "sqft": 1200,
+    "type": "Condo",
+    "status": "For Sale",
+    "description": "Beautiful modern condo in the heart of downtown with stunning city views and premium finishes.",
+    "features": [
+      "City Views",
+      "Modern Kitchen",
+      "Hardwood Floors",
+      "In-unit Laundry",
+      "Gym Access",
+      "Rooftop Terrace"
     ],
-    "description": "Stunning modern loft in the heart of downtown featuring floor-to-ceiling windows, exposed brick walls, and premium finishes throughout. This unit offers breathtaking city views and access to world-class dining and entertainment.",
-    "amenities": ["Parking", "Gym", "Rooftop Terrace", "Concierge", "Pet Friendly", "In-unit Laundry"],
-    "yearBuilt": 2018,
-    "listingDate": "2024-01-15T10:00:00Z",
-    "coordinates": { "lat": 34.0522, "lng": -118.2437 }
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800",
+      "https://images.unsplash.com/photo-1560449752-1506465bf178?w=800",
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800"
+    ],
+    "virtualTourUrl": "https://www.example-360tour.com/tour/downtown-condo",
+    "agent": {
+      "name": "Sarah Johnson",
+      "phone": "(555) 123-4567",
+      "email": "sarah@realty.com"
+    }
   },
-  {
-    "id": "2",
-    "title": "Charming Victorian House",
-    "price": 1250000,
-    "address": "456 Oak Avenue, Hillcrest, CA 90211",
+{
+    "id": 2,
+    "title": "Suburban Family Home",
+    "price": 950000,
+    "address": "456 Oak Avenue, Westside",
     "bedrooms": 4,
     "bathrooms": 3,
-    "squareFeet": 2800,
-    "propertyType": "House",
-    "images": [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1585263515882-d4b2c3e8a2f1?w=800&h=600&fit=crop"
+    "sqft": 2400,
+    "type": "House",
+    "status": "For Sale",
+    "description": "Spacious family home with large backyard, perfect for growing families.",
+    "features": [
+      "Large Backyard",
+      "Updated Kitchen",
+      "Master Suite",
+      "2-Car Garage",
+      "Fireplace",
+      "Walk-in Closets"
     ],
-    "description": "Beautifully restored Victorian home with original hardwood floors, ornate moldings, and a wraparound porch. This property combines historic charm with modern conveniences in a quiet residential neighborhood.",
-    "amenities": ["Garden", "Fireplace", "Hardwood Floors", "Garage", "Updated Kitchen", "Period Details"],
-    "yearBuilt": 1895,
-    "listingDate": "2024-01-12T14:30:00Z",
-    "coordinates": { "lat": 34.0689, "lng": -118.3507 }
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800",
+      "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800"
+    ],
+    "virtualTourUrl": "https://www.example-360tour.com/tour/suburban-home",
+    "agent": {
+      "name": "Mike Davis",
+      "phone": "(555) 234-5678",
+      "email": "mike@realty.com"
+    }
   },
   {
-    "id": "3",
-    "title": "Luxury Penthouse Suite",
+"id": 3,
+    "title": "Luxury Waterfront Villa",
     "price": 2500000,
-    "address": "789 Sky Tower, Beverly Hills, CA 90212",
-    "bedrooms": 3,
-    "bathrooms": 3,
-    "squareFeet": 2200,
-    "propertyType": "Condo",
-    "images": [
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1502005229762-cf1b2da02f3f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+    "address": "789 Beach Road, Oceanview",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "sqft": 3800,
+    "type": "Villa",
+    "status": "For Sale",
+    "description": "Stunning waterfront villa with panoramic ocean views and private beach access.",
+    "features": [
+      "Ocean Views",
+      "Private Beach",
+      "Infinity Pool",
+      "Wine Cellar",
+      "Chef's Kitchen",
+      "Home Theater"
     ],
-    "description": "Exclusive penthouse with panoramic city and ocean views. Features include a private terrace, chef's kitchen with premium appliances, and luxurious master suite. Building amenities include valet parking and 24/7 security.",
-    "amenities": ["Valet Parking", "24/7 Security", "Private Terrace", "City Views", "Premium Appliances", "Spa"],
-    "yearBuilt": 2020,
-    "listingDate": "2024-01-10T09:15:00Z",
-    "coordinates": { "lat": 34.0736, "lng": -118.4004 }
-  },
-  {
-    "id": "4",
-    "title": "Cozy Suburban Townhouse",
-    "price": 675000,
-    "address": "321 Maple Lane, Westside, CA 90213",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "squareFeet": 1800,
-    "propertyType": "Townhouse",
     "images": [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600563438938-a42d1c7b0a72?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600563438901-c3d1ac0b0b2e?w=800&h=600&fit=crop"
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800",
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
     ],
-    "description": "Perfect family home in a quiet cul-de-sac with excellent schools nearby. Features an open floor plan, updated kitchen, and private backyard. Great for entertaining and family living.",
-    "amenities": ["Backyard", "Garage", "Open Floor Plan", "Near Schools", "Quiet Street", "Storage"],
-    "yearBuilt": 2010,
-    "listingDate": "2024-01-08T16:45:00Z",
-    "coordinates": { "lat": 34.0194, "lng": -118.4912 }
-  },
-  {
-    "id": "5",
-    "title": "Stylish Studio Apartment",
-    "price": 425000,
-    "address": "654 Arts District, Los Angeles, CA 90214",
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "squareFeet": 650,
-    "propertyType": "Studio",
-    "images": [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop"
-    ],
-    "description": "Efficient studio layout in the trendy Arts District. High ceilings, exposed concrete, and modern fixtures create an urban oasis. Walking distance to galleries, restaurants, and public transportation.",
-    "amenities": ["High Ceilings", "Exposed Concrete", "Near Transit", "Arts District", "Modern Fixtures", "Walk Score 95"],
-    "yearBuilt": 2015,
-    "listingDate": "2024-01-05T11:20:00Z",
-    "coordinates": { "lat": 34.0444, "lng": -118.2370 }
+    "virtualTourUrl": "https://www.example-360tour.com/tour/waterfront-villa",
+"agent": {
+      "name": "Emily Chen",
+      "phone": "(555) 345-6789",
+      "email": "emily@realty.com"
+    }
   }
 ]
